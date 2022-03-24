@@ -2,6 +2,7 @@ package frequency;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Analytics {
@@ -26,8 +27,8 @@ public class Analytics {
       if (hMap.containsKey(word)) {
 //        System.out.printf("Contain %s \n", word);
 
-        double wordValue= hMap.get(word) + 0.1;
-        hMap.put(word, Math.round(wordValue * 10.0) / 10.0 );
+        double wordValue = hMap.get(word) + 0.1;
+        hMap.put(word, Math.round(wordValue * 10.0) / 10.0);
 
       } else {
 //        System.out.printf("does not contain word %s \n", word);
@@ -35,12 +36,19 @@ public class Analytics {
       }
     }
 
-    System.out.print(hMap);
+//    System.out.print(hMap);
+    System.out.println(List.of(hMap));
 
     return hMap;
   }
 
-  public static void main(String[] args) {
-    wordFrequency("yesterday no way definitely yesterday. if and no no memory memory");
-  }
+//  public static void main(String[] args) {
+//    wordFrequency(
+//        "yesterday  no no no no no no no no no no no no no no no no no no no no no no no no no no "
+//            + "no no no no no no no no no way definitely yesterday. if and no no memory memory "
+//            + "yesterday no way definitely yesterday. if and no no memory memory yesterday no way "
+//            + "definitely yesterday. if and no no memory memory yesterday no way definitely "
+//            + "yesterday. if and no no memory memory yesterday no way definitely yesterday. "
+//            + "if and no no memory memory");
+//  }
 }
