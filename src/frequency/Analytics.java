@@ -25,11 +25,11 @@ public class Analytics {
       // check to see if word is already in Hashmap
       if (hMap.containsKey(word)) {
 //        System.out.printf("Contain %s \n", word);
-        hMap.put(word, ((hMap.get(word)*10) + 1.0) / 10);
+        hMap.put(word, (hMap.get(word) + 1.0) );
 
       } else {
 //        System.out.printf("does not contain word %s \n", word);
-        hMap.put(word, (0.1));
+        hMap.put(word, (1.0));
       }
     }
 
