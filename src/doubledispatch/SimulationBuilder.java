@@ -9,14 +9,8 @@ import java.util.List;
  */
 public class SimulationBuilder {
 
-  private static List<String> Log;
+  private static final List<String> Log =new ArrayList<>();
 
-  /**
-   * Constructor creates a log new ArrayList.
-   */
-  public SimulationBuilder() {
-    Log = new ArrayList<>();
-  }
 
   /**
    * Method that create a new Planet class instance based on the name parameters.
@@ -68,7 +62,7 @@ public class SimulationBuilder {
     return Log;
   }
 
-
+//
 //  public static void main(String[] args) {
 //
 //    SimulationBuilder Sim1 = new SimulationBuilder();
@@ -82,14 +76,13 @@ public class SimulationBuilder {
 ////    jupiterPlanet.accept(lifeExp);
 //    assert marsPlanet != null;
 //    marsPlanet.accept(lifeExp);
-//    assert venusPlanet != null;
-//    venusPlanet.accept(terrainExp);
-//    assert lifeExp != null;
-//    lifeExp.visit((Mars) marsPlanet);
-//    lifeExp.visit((Venus) venusPlanet);
-//    lifeExp.visit( (IPlanet) jupiterPlanet);
+////    venusPlanet.accept(terrainExp);
+////    lifeExp.visit((Mars) marsPlanet);
+////    assert lifeExp != null;
+////    lifeExp.visit((Venus) venusPlanet);
+////    lifeExp.visit( (IPlanet) jupiterPlanet);
 //    List<String> log1 = getSimulationLog();
-////    System.out.println(log1);
+//    System.out.println(log1);
 //  }
 
 
