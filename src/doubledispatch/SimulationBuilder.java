@@ -24,7 +24,7 @@ public class SimulationBuilder {
       System.out.println("create venus");
       return new Venus();
     } else {
-      return null;
+      return new UnknownPlanet();
     }
   }
 
@@ -59,14 +59,13 @@ public class SimulationBuilder {
     IPlanet marsPlanet = createPlanet("mars");
     IPlanet venusPlanet = createPlanet("venus");
     IPlanet jupiterPlanet = createPlanet("jupiter");
-    assert marsPlanet != null;
+    jupiterPlanet.accept(lifeExp);
     marsPlanet.accept(lifeExp);
-    assert venusPlanet != null;
     venusPlanet.accept(terrainExp);
     assert lifeExp != null;
-    lifeExp.visit((Mars) marsPlanet);
-    lifeExp.visit((Venus) venusPlanet);
-    lifeExp.visit(jupiterPlanet);
+    lifeExp.visit( (Mars) marsPlanet);
+    lifeExp.visit( (Venus) venusPlanet);
+    lifeExp.visit( jupiterPlanet);
     List<String> log1 = getSimulationLog();
 //    System.out.println(log1);
   }
