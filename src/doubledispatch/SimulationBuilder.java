@@ -45,6 +45,7 @@ public class SimulationBuilder {
   }
 
   public static List<String> getSimulationLog() {
+    System.out.print(Log);
     return Log;
   }
 
@@ -57,6 +58,7 @@ public class SimulationBuilder {
 
     IPlanet marsPlanet = createPlanet("mars");
     IPlanet venusPlanet = createPlanet("venus");
+    IPlanet jupiterPlanet = createPlanet("jupiter");
     assert marsPlanet != null;
     marsPlanet.accept(lifeExp);
     assert venusPlanet != null;
@@ -64,8 +66,9 @@ public class SimulationBuilder {
     assert lifeExp != null;
     lifeExp.visit((Mars) marsPlanet);
     lifeExp.visit((Venus) venusPlanet);
+    lifeExp.visit(jupiterPlanet);
     List<String> log1 = getSimulationLog();
-    System.out.println(log1);
+//    System.out.println(log1);
   }
 
 
