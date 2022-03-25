@@ -1,12 +1,20 @@
 package frequency;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+
+/**
+ * Class for Analytics to determine the wordFrequency of a string message.
+ */
 public class Analytics {
 
 
+  /**
+   * Paras a string message and create a hashmap that stores each word frequency.
+   * @param message the string message to be parsed.
+   * @return a map with a key string and value double.
+   */
   public static Map<String, Double> wordFrequency(String message) {
 
     if (message == null || message.equals("")) {
@@ -19,7 +27,6 @@ public class Analytics {
     // array length
     int arrayLength = wordsArray.length;
 
-    System.out.printf("length %d \n", arrayLength);
 
     Map<String, Double> hMap = new HashMap<>();
     // loop through wordsArray and add up the number of words
@@ -36,7 +43,6 @@ public class Analytics {
       }
     }
 
-    System.out.println(List.of(hMap));
 
     // loop through wordsArray and convert the count to frequency of the words.
     hMap.forEach((k, v) -> {
@@ -44,7 +50,6 @@ public class Analytics {
       hMap.put(k, wordFrequency);
     });
 
-    System.out.println(List.of(hMap));
 
     return hMap;
   }

@@ -4,7 +4,7 @@ package doubledispatch;
 /**
  * TerrainExplorer class with ISpaceExplorer implementation.
  */
-public class TerrainExplorer implements ISpaceExplorer{
+public class TerrainExplorer implements ISpaceExplorer {
 
 
   /**
