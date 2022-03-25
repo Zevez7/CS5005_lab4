@@ -1,5 +1,10 @@
 package doubledispatch;
 
+
+/**
+ * Class for LifeExplorer with implementation from ISpaceExplorer. Overload for the different planet.
+ */
+
 public  class LifeExplorer implements ISpaceExplorer {
   @Override
   public void visit(Mercury mercury) {
@@ -8,7 +13,6 @@ public  class LifeExplorer implements ISpaceExplorer {
 
   @Override
   public void visit(Mars mars) {
-    System.out.println("visit mars");
     SimulationBuilder.addToLog("Landing on Mars...exploring for life");
   }
 

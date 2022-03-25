@@ -24,7 +24,7 @@ public class SimulationBuilder {
       System.out.println("create venus");
       return new Venus();
     } else {
-      return new UnknownPlanet();
+      return null;
     }
   }
 
@@ -50,25 +50,28 @@ public class SimulationBuilder {
   }
 
 
-  public static void main(String[] args) {
-
-    SimulationBuilder Sim1 = new SimulationBuilder();
-    ISpaceExplorer lifeExp = createExplorer("LifeExplorer");
-    ISpaceExplorer terrainExp = createExplorer("TerrainExplorer");
-
-    IPlanet marsPlanet = createPlanet("mars");
-    IPlanet venusPlanet = createPlanet("venus");
-    IPlanet jupiterPlanet = createPlanet("jupiter");
-    jupiterPlanet.accept(lifeExp);
-    marsPlanet.accept(lifeExp);
-    venusPlanet.accept(terrainExp);
-    assert lifeExp != null;
-    lifeExp.visit( (Mars) marsPlanet);
-    lifeExp.visit( (Venus) venusPlanet);
-    lifeExp.visit( jupiterPlanet);
-    List<String> log1 = getSimulationLog();
-//    System.out.println(log1);
-  }
+//  public static void main(String[] args) {
+//
+//    SimulationBuilder Sim1 = new SimulationBuilder();
+//    ISpaceExplorer lifeExp = createExplorer("LifeExplorer");
+//    ISpaceExplorer terrainExp = createExplorer("TerrainExplorer");
+//
+//    IPlanet marsPlanet = createPlanet("mars");
+//    IPlanet venusPlanet = createPlanet("venus");
+//    IPlanet jupiterPlanet = createPlanet("jupiter");
+////    assert jupiterPlanet != null;
+////    jupiterPlanet.accept(lifeExp);
+//    assert marsPlanet != null;
+//    marsPlanet.accept(lifeExp);
+//    assert venusPlanet != null;
+//    venusPlanet.accept(terrainExp);
+//    assert lifeExp != null;
+//    lifeExp.visit((Mars) marsPlanet);
+//    lifeExp.visit((Venus) venusPlanet);
+//    lifeExp.visit( (IPlanet) jupiterPlanet);
+//    List<String> log1 = getSimulationLog();
+////    System.out.println(log1);
+//  }
 
 
 }
