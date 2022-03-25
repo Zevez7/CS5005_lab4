@@ -14,13 +14,15 @@ public class SimulationBuilderTest {
   @Test
   public void testSimulation() {
 
-//    SimulationBuilder Sim1 = new SimulationBuilder;
+
+    SimulationBuilder Sim1 = new SimulationBuilder();
     ISpaceExplorer lifeExp = SimulationBuilder.createExplorer("LifeExplorer");
     ISpaceExplorer terrainExp = SimulationBuilder.createExplorer("TerrainExplorer");
 
     IPlanet marsPlanet = SimulationBuilder.createPlanet("mars");
     marsPlanet.accept(lifeExp);
-    List<String> log1 = SimulationBuilder.Log;
+    List<String> log1 = Sim1.getSimulationLog();
+    assert lifeExp != null;
     lifeExp.visit(marsPlanet);
 
 //    SimulationBuilder.Log;

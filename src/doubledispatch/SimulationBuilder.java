@@ -1,21 +1,26 @@
 package doubledispatch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SimulationBuilder {
 
-  public static List<String> Log;
+  private static List<String> Log;
+
+  public SimulationBuilder() {
+    Log = new ArrayList<String>();
+  }
 
   public static IPlanet createPlanet(String name) {
 
-    if (name == "mars") {
+    if (name.equalsIgnoreCase("mars")) {
       System.out.println("create mars");
       return new Mars();
-    } else if (name == "mercury") {
+    } else if (name.equalsIgnoreCase("mercury")) {
       System.out.println("create mercury");
 
       return new Mercury();
-    } else if (name == "venus") {
+    } else if (name.equalsIgnoreCase("venus")) {
       System.out.println("create venus");
       return new Venus();
     } else {
@@ -26,9 +31,9 @@ public class SimulationBuilder {
 
   public static ISpaceExplorer createExplorer(String name) {
 
-    if (name == "LifeExplorer") {
+    if (name.equalsIgnoreCase("LifeExplorer")) {
       return new LifeExplorer();
-    } else if (name == "TerrainExplorer") {
+    } else if (name.equalsIgnoreCase("TerrainExplorer")) {
       return new TerrainExplorer();
     } else {
       return null;
@@ -41,6 +46,26 @@ public class SimulationBuilder {
 
   public static List<String> getSimulationLog() {
     return Log;
+  }
+
+
+  public static void main(String[] args) {
+
+    SimulationBuilder Sim1 = new SimulationBuilder();
+    ISpaceExplorer lifeExp = createExplorer("LifeExplorer");
+    ISpaceExplorer terrainExp = createExplorer("TerrainExplorer");
+
+    IPlanet marsPlanet = createPlanet("mars");
+    IPlanet venusPlanet = createPlanet("venus");
+    assert marsPlanet != null;
+    marsPlanet.accept(lifeExp);
+    assert venusPlanet != null;
+    venusPlanet.accept(terrainExp);
+    assert lifeExp != null;
+    lifeExp.visit((Mars) marsPlanet);
+    lifeExp.visit((Venus) venusPlanet);
+    List<String> log1 = getSimulationLog();
+    System.out.println(log1);
   }
 
 

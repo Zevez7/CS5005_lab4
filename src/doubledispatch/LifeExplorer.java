@@ -16,4 +16,8 @@ public  class LifeExplorer implements ISpaceExplorer {
   public void visit(Venus venus) {
     SimulationBuilder.addToLog("Landing on Venus...exploring life");
   }
+  @Override
+  public void visit(IPlanet aPlanet) {
+    ISpaceExplorer.super.visit(aPlanet);
+  }
 }

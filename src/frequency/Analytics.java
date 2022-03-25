@@ -18,8 +18,13 @@ public class Analytics {
     String[] wordsArray = message.replaceAll("[^a-zA-Z ]", "").toUpperCase().split("\\s+");
 //    System.out.println(Arrays.toString(wordsArray));
 
+    // array length
+    int arrayLength = wordsArray.length;
+
+    System.out.printf("length %d \n", arrayLength);
+
     Map<String, Double> hMap = new HashMap<>();
-    // loop through words
+    // loop through wordsArray and add up the number of words
     for (String word : wordsArray) {
 //      System.out.println(word);
 
@@ -27,14 +32,21 @@ public class Analytics {
       if (hMap.containsKey(word)) {
 //        System.out.printf("Contain %s \n", word);
 
-        double wordValue = hMap.get(word) + 0.1;
-        hMap.put(word, Math.round(wordValue * 10.0) / 10.0);
+        double wordValue = hMap.get(word) + 1.0;
+        hMap.put(word, wordValue);
 
       } else {
-//        System.out.printf("does not contain word %s \n", word);
-        hMap.put(word, (0.1));
+        hMap.put(word, 1.0);
       }
     }
+
+    System.out.println(List.of(hMap));
+
+    // loop through wordsArray and convert the count to frequncy of the words.
+    hMap.forEach((k, v) -> {
+      double wordFrequency = hMap.get(k) / arrayLength;
+      hMap.put(k, wordFrequency);
+    });
 
 //    System.out.print(hMap);
     System.out.println(List.of(hMap));
@@ -42,13 +54,9 @@ public class Analytics {
     return hMap;
   }
 
-//  public static void main(String[] args) {
-//    wordFrequency(
-//        "yesterday  no no no no no no no no no no no no no no no no no no no no no no no no no no "
-//            + "no no no no no no no no no way definitely yesterday. if and no no memory memory "
-//            + "yesterday no way definitely yesterday. if and no no memory memory yesterday no way "
-//            + "definitely yesterday. if and no no memory memory yesterday no way definitely "
-//            + "yesterday. if and no no memory memory yesterday no way definitely yesterday. "
-//            + "if and no no memory memory");
-//  }
+  public static void main(String[] args) {
+    wordFrequency(
+        "one two two three three three four four four four"
+    );
+  }
 }
