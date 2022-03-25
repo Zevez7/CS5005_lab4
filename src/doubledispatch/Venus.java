@@ -3,7 +3,8 @@ package doubledispatch;
 /**
  * Class for planet venus that implement IPlanet.
  */
-public class Venus implements IPlanet{
+public class Venus implements IPlanet {
+
   /**
    * Accept method which accept an ISpaceExplorer for the planet.
    *

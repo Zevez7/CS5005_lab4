@@ -1,5 +1,9 @@
 package doubledispatch;
 
+
+/**
+ * TerrainExplorer class with ISpaceExplorer implementation.
+ */
 public class TerrainExplorer implements ISpaceExplorer{
 
 
@@ -10,7 +14,7 @@ public class TerrainExplorer implements ISpaceExplorer{
    */
   @Override
   public void visit(Mercury mercury) {
-    SimulationBuilder.addToLog("Landing on Mercury...exploring for life");
+    SimulationBuilder.addToLog("Navigating and mapping mercury");
   }
 
   /**
@@ -20,7 +24,7 @@ public class TerrainExplorer implements ISpaceExplorer{
    */
   @Override
   public void visit(Mars mars) {
-    SimulationBuilder.addToLog("Landing on Mars...exploring for life");
+    SimulationBuilder.addToLog("Navigating and mapping mars");
   }
 
   /**
@@ -30,7 +34,7 @@ public class TerrainExplorer implements ISpaceExplorer{
    */
   @Override
   public void visit(Venus venus) {
-    SimulationBuilder.addToLog("Landing on Venus...exploring life");
+    SimulationBuilder.addToLog("Navigating and mapping venus");
   }
 
   /**
